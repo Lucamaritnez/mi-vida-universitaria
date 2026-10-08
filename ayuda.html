@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mi Vida Universitaria - Ayuda</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./js/ui.js"></script>
+</head>
+<body>
+    <div class="app fade-in">
+        <aside class="sidebar">
+            <div class="brand"><i class="fa-solid fa-graduation-cap"></i><span>Mi Vida<br>Universitaria</span></div>
+            <nav>
+                <a href="dashboard.html" class="menu-item"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
+                <a href="materias.html" class="menu-item"><i class="fa-solid fa-book"></i><span>Materias</span></a>
+                <a href="agenda.html" class="menu-item"><i class="fa-regular fa-calendar"></i><span>Agenda</span></a>
+                <a href="perfil.html" class="menu-item"><i class="fa-regular fa-user"></i><span>Perfil</span></a>
+                <a href="ayuda.html" class="menu-item active"><i class="fa-regular fa-circle-question"></i><span>Ayuda</span></a>
+            </nav>
+
+            <div class="sidebar-pomodoro">
+                <div class="sidebar-pomo-title">
+                    <span><i class="fa-solid fa-stopwatch"></i> Pomodoro</span>
+                    <i class="fa-solid fa-circle-info" id="sidebarPomoInfo" style="cursor: pointer;" title="¿Cómo funciona?"></i>
+                </div>
+                <div class="sidebar-pomo-timer" id="sidebarPomoTimer">25:00</div>
+                <div class="sidebar-pomo-btns">
+                    <button class="sidebar-pomo-btn" id="sidebarPomoStart">Iniciar</button>
+                    <button class="sidebar-pomo-btn reset" id="sidebarPomoReset">Reset</button>
+                </div>
+            </div>
+
+            <button id="logoutButton" class="logout" type="button"><i class="fa-solid fa-right-from-bracket"></i><span>Cerrar sesión</span></button>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="date-badge">
+                    <i class="fa-regular fa-circle-question"></i>
+                    <span>Manual de Ayuda</span>
+                </div>
+                <div class="user">
+                    <button id="themeToggle" class="theme-btn" title="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+                    <div class="avatar" id="userAvatar">U</div>
+                </div>
+            </header>
+
+            <section class="dashboard">
+                <h1 style="color: var(--dark); font-weight: 700; font-size: 24px; margin-bottom: 6px;">Manual de Uso y Funciones</h1>
+                <p class="subtitle" style="margin-bottom: 25px;">Todo lo que necesitás saber para sacarle el máximo provecho a tu plataforma de organización universitaria.</p>
+
+                <div style="display: grid; gap: 20px;">
+                    
+                    <div class="stat-card">
+                        <h3 style="color: var(--primary); font-size: 18px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-book-open"></i> 1. Gestión de Materias y Eventos Rápidos
+                        </h3>
+                        <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">
+                            En la sección de <strong>Materias</strong> podés registrar tus cursadas agregando el nombre, profesor y horarios. Cuenta con estas ventajas:
+                        </p>
+                        <ul style="margin-left: 20px; font-size: 14px; color: var(--text); display: flex; flex-direction: column; gap: 6px; margin-top: 8px;">
+                            <li><strong>Contador de eventos:</strong> Cada tarjeta te muestra cuántos compromisos tiene vinculados.</li>
+                            <li><strong>Clic en la materia:</strong> Hacé clic en cualquier parte de la tarjeta de una materia para abrir un panel flotante y agendar un evento directamente asociado a ella.</li>
+                            <li><strong>Prevención de duplicados:</strong> El sistema te protege para no registrar dos materias con el mismo nombre.</li>
+                        </ul>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3 style="color: var(--primary); font-size: 18px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-regular fa-calendar-days"></i> 2. Agenda y Filtros Avanzados
+                        </h3>
+                        <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">
+                            La <strong>Agenda Global</strong> agrupa todos tus exámenes, trabajos prácticos, entregas y finales ordenados por fecha.
+                        </p>
+                        <ul style="margin-left: 20px; font-size: 14px; color: var(--text); display: flex; flex-direction: column; gap: 6px; margin-top: 8px;">
+                            <li><strong>Filtros rápidos:</strong> Usá los botones superiores (<em>Todos, Exámenes, TPs, Entregas, Finales</em>) para ordenar visualmente los eventos que querés ver.</li>
+                            <li><strong>Control de fechas pasadas:</strong> Si intentás agendar algo en una fecha anterior a hoy, recibirás un aviso preventivo.</li>
+                            <li><strong>Estados y completados:</strong> Marcá con el botón circular de check cada tarea finalizada para actualizar tu barra de progreso general en el Inicio.</li>
+                        </ul>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3 style="color: var(--primary); font-size: 18px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-stopwatch"></i> 3. Cronómetro Pomodoro Integrado
+                        </h3>
+                        <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">
+                            En la barra lateral izquierda encontrás el widget de <strong>Pomodoro</strong> configurado en bloques de 25 minutos de estudio enfocado. Podés iniciarlo, pausarlo o reiniciarlo mientras navegás por las distintas secciones de la plataforma.
+                        </p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h3 style="color: var(--primary); font-size: 18px; display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-database"></i> 4. Respaldo de Datos (Perfil)
+                        </h3>
+                        <p style="font-size: 14px; color: var(--text-light); line-height: 1.6;">
+                            Tus datos se guardan de forma segura en el almacenamiento local de tu navegador. Desde la sección de <strong>Perfil</strong> podés:
+                        </p>
+                        <ul style="margin-left: 20px; font-size: 14px; color: var(--text); display: flex; flex-direction: column; gap: 6px; margin-top: 8px;">
+                            <li><strong>Exportar Datos:</strong> Descargar un archivo de respaldo en formato JSON con todas tus materias y eventos.</li>
+                            <li><strong>Importar Datos:</strong> Restaurar tu información en cualquier momento desde un archivo compatible, con validación de seguridad incorporada contra errores.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="dashboard.html" class="bottom-item"><i class="fa-solid fa-house"></i>Inicio</a>
+            <a href="materias.html" class="bottom-item"><i class="fa-solid fa-book"></i>Materias</a>
+            <a href="agenda.html" class="bottom-item"><i class="fa-regular fa-calendar"></i>Agenda</a>
+            <a href="perfil.html" class="bottom-item"><i class="fa-regular fa-user"></i>Perfil</a>
+            <a href="ayuda.html" class="bottom-item active"><i class="fa-regular fa-circle-question"></i>Ayuda</a>
+        </nav>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let usuario;
+            try {
+                usuario = JSON.parse(localStorage.getItem("usuario"));
+                if (!usuario) throw new Error();
+            } catch(err) {
+                window.location.replace("index.html"); return;
+            }
+            const avatarEl = document.getElementById("userAvatar");
+            if (avatarEl && usuario.nombre) {
+                avatarEl.textContent = usuario.nombre.charAt(0).toUpperCase();
+            }
+            document.querySelectorAll(".logout").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    localStorage.removeItem("usuario");
+                    window.location.replace("index.html");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
